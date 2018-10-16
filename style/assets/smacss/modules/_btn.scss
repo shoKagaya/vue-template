@@ -17,12 +17,3 @@
   background-color: #45b035;
   color: #fff;
 }
-
-.mod-linkBtn {
-  @include btn();
-
-  color: #999796;
-  font-size: 1.3rem;
-  margin-top: 10px;
-  text-decoration: underline;
-}
