@@ -1,12 +1,18 @@
 <template>
-  <select 
-    name="age" 
+  <select
+    v-model="selected"
+    name="age"
     class="mod-selectbox">
-    <option 
-      v-for="age in ages" 
-      :value="age.text" 
-      :key="age.text">
-      {{ age.text }}
+    <option
+      value="undefined"
+      disabled
+      selected>未選択</option>
+    <option
+      v-for="age in ages"
+      v-if="age.key_id ===872"
+      :value="age.value_name"
+      :key="age.value_id">
+      {{ age.value_name }}
     </option>
   </select>
 </template>
@@ -14,17 +20,20 @@
 <script>
 export default {
   name: 'RegistryFormAge',
+  props: {
+    ages: {
+      type: Array,
+      default: () => []
+    }
+  },
   data() {
     return {
-      ages: [
-        { text: '未選択' },
-        { text: '10代' },
-        { text: '20代' },
-        { text: '30代' },
-        { text: '40代' },
-        { text: '50代' },
-        { text: '60代以上' }
-      ]
+      selected: 'undefined'
+    }
+  },
+  methods: {
+    getSelected() {
+      return this.selected
     }
   }
 }
