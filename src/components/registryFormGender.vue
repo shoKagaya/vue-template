@@ -4,7 +4,7 @@
     name="gender"
     class="mod-selectbox">
     <option
-      value="undefined"
+      value=""
       disabled
       selected>未選択</option>
     <option
@@ -28,12 +28,7 @@ export default {
   },
   data() {
     return {
-      selected: 'undefined'
-    }
-  },
-  methods: {
-    getSelected() {
-      return this.selected
+      selected: ''
     }
   }
 }

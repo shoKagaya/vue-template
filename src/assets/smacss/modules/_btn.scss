@@ -8,8 +8,9 @@
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
-  width: 311px;
+  max-width: 95%;
   text-decoration: none;
+  width: 311px;
 }
 
 .mod-nextBtn {
@@ -31,7 +32,7 @@
 .mod-ghostBtn {
   @include btn();
 
-  color: #45B035;
-  border: 1px solid #45B035;
   background-color: transparent;
+  border: 1px solid #45b035;
+  color: #45b035;
 }

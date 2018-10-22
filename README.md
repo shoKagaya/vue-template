@@ -1,35 +1,33 @@
-# popinfo-segment-form
+# okb
 
-> A Vue.js project
+## Project setup
+```
+yarn install
+```
 
-## 環境構築手順
+### Compiles and hot-reloads for development
+```
+yarn run serve
+```
 
-# install dependencies
-$ npm install
+### Compiles and minifies for production
+```
+yarn run build
+```
 
-# serve with hot reload at localhost:8080
-$ npm run dev
+### Run your tests
+```
+yarn run test
+```
 
+### Lints and fixes files
+```
+yarn run lint
+```
 
+### URL
+http://localhost:8080/#/SegmentForm
 
-## html
-
-htmlの運用ルールについて
-
-### 命名規則
-共通モジュールにはプリフィックスを付けてください。
-
-#### レイアウトクラス
-`.l-`
-
-例
-
-`.l-header`
-
-#### 再利用可能なモジュールクラス
-`.mod-`
-
-例
-
-`.mod-btn`
-`.mod-title1`
+#### query
+?dType=hoge
+&popinfoId=foo
