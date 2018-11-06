@@ -21,7 +21,7 @@ build_stg:
     VUE_APP_SERVER_API_ENDPOINT: $STG_VUE_APP_SERVER_API_ENDPOINT
     VUE_APP_REQUEST_TIMEOUT: $STG_VUE_APP_REQUEST_TIMEOUT
   only:
-    - master
+    - production
 
 
 
@@ -44,4 +44,4 @@ deploy_stg:
   variables:
     VUE_APP_S3_BUCKET_NAME: $STG_VUE_APP_S3_BUCKET_NAME
   only:
-    - master
+    - production

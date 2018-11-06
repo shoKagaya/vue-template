@@ -1,8 +1,20 @@
-# okb
+# vue.js template
 
 ## Project setup
 ```
 yarn install
+```
+
+### Create env file
+```
+# put env file on project root
+vim .env
+
+# see .env.example
+------------------------------
+VUE_APP_SERVER_API_ENDPOINT=https://users.stg.popinfo.jp
+VUE_APP_REQUEST_TIMEOUT=1000
+------------------------------
 ```
 
 ### Compiles and hot-reloads for development
@@ -26,8 +38,4 @@ yarn run lint
 ```
 
 ### URL
-http://localhost:8080/#/SegmentForm
-
-#### query
-?dType=hoge
-&popinfoId=foo
+http://localhost:8080/SegmentForm/${dType}/${popinfoId}/

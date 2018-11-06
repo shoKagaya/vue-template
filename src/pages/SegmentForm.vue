@@ -5,28 +5,15 @@
         ユーザー情報を登録すると、登録されたユーザー情報に基づいて、あなたに適したお知らせが配信されるようになります。
       </p>
       <form class="registryForm">
-        <fieldset class="registryForm_item">
-          <legend class="registryForm_title">性別</legend>
+        <fieldset
+          v-for="item in segmentlist"
+          :key="item[0].key_id"
+          class="registryForm_item">
+          <legend class="registryForm_title">
+            {{ item[0].key_name }}
+          </legend>
           <div class="registryForm_selectboxParent">
-            <registryFormGender
-              ref="gender"
-              :genders="segmentlist" />
-          </div>
-        </fieldset>
-        <fieldset class="registryForm_item">
-          <legend class="registryForm_title">年代</legend>
-          <div class="registryForm_selectboxParent">
-            <registryFormAge
-              ref="age"
-              :ages="segmentlist" />
-          </div>
-        </fieldset>
-        <fieldset class="registryForm_item">
-          <legend class="registryForm_title">居住地</legend>
-          <div class="registryForm_selectboxParent">
-            <registryFormResidence
-              ref="residence"
-              :residences="segmentlist" />
+            <registryForm :segment-list="item" @changeSelected="setParams" />
           </div>
         </fieldset>
       </form>
@@ -46,12 +33,9 @@
         <a
           href="okbapp://input.segment.info.complete"
           class="modal_exitBtn mod-ghostBtn"
-          @click.prevent="toggleModal()">閉じる</a>
+        >閉じる</a>
       </div>
     </div>
-    <div
-      :class="{'is-open':isLoadingCompleat}"
-      class="mod-loader"><div class="mod-loader__inner">Loading...</div></div>
   </div>
 </template>
 
@@ -109,7 +93,7 @@ export default {
   background-color: #45b035;
   color: #fff;
   display: flex;
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   font-weight: bold;
   height: 60px;
   justify-content: center;

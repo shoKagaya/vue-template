@@ -7,13 +7,9 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/SegmentForm',
+      path: '/SegmentForm/:deviceType/:popinfoId/',
       name: 'SegmentForm',
-      component: SegmentForm,
-      props: route => ({
-        popinfoId: route.query.popinfoId,
-        dType: route.query.dType
-      })
+      component: SegmentForm
     }
   ]
 })
